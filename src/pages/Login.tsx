@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -18,6 +18,9 @@ const Login = () => {
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');
   const [registerConfirm, setRegisterConfirm] = useState('');
+  
+  const loginTabRef = useRef<HTMLButtonElement>(null);
+  const registerTabRef = useRef<HTMLButtonElement>(null);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,6 +48,18 @@ const Login = () => {
     console.log('Register with:', registerName, registerEmail, registerPassword);
   };
 
+  const switchToRegister = () => {
+    if (registerTabRef.current) {
+      registerTabRef.current.click();
+    }
+  };
+
+  const switchToLogin = () => {
+    if (loginTabRef.current) {
+      loginTabRef.current.click();
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
@@ -52,8 +67,8 @@ const Login = () => {
         <div className="w-full max-w-md">
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
-              <TabsTrigger value="login">Login</TabsTrigger>
-              <TabsTrigger value="register">Register</TabsTrigger>
+              <TabsTrigger value="login" ref={loginTabRef}>Login</TabsTrigger>
+              <TabsTrigger value="register" ref={registerTabRef}>Register</TabsTrigger>
             </TabsList>
 
             <TabsContent value="login">
@@ -99,7 +114,7 @@ const Login = () => {
                 </CardContent>
                 <CardFooter className="flex justify-center">
                   <div className="text-sm text-gray-500">
-                    Don't have an account? <a href="#" className="text-legal-blue hover:underline" onClick={() => document.querySelector('[data-value="register"]')?.click()}>Sign up</a>
+                    Don't have an account? <button onClick={switchToRegister} className="text-legal-blue hover:underline">Sign up</button>
                   </div>
                 </CardFooter>
               </Card>
@@ -165,7 +180,7 @@ const Login = () => {
                 </CardContent>
                 <CardFooter className="flex justify-center">
                   <div className="text-sm text-gray-500">
-                    Already have an account? <a href="#" className="text-legal-blue hover:underline" onClick={() => document.querySelector('[data-value="login"]')?.click()}>Sign in</a>
+                    Already have an account? <button onClick={switchToLogin} className="text-legal-blue hover:underline">Sign in</button>
                   </div>
                 </CardFooter>
               </Card>

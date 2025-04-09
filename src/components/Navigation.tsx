@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { BalanceScale } from 'lucide-react';
+import { Scale } from 'lucide-react';
 
 const Navigation: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const Navigation: React.FC = () => {
       <div className="container mx-auto flex items-center justify-between flex-wrap">
         <div className="flex items-center flex-shrink-0 mr-6">
           <Link to="/" className="flex items-center">
-            <BalanceScale className="h-6 w-6 text-legal-gold mr-2" />
+            <Scale className="h-6 w-6 text-legal-gold mr-2" />
             <span className="font-semibold text-xl tracking-tight">Legal AI</span>
           </Link>
         </div>

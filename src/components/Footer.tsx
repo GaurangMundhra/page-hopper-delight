@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BalanceScale, Facebook, Twitter, Linkedin, Youtube, Globe, Phone, Mail } from 'lucide-react';
+import { Scale, Facebook, Twitter, Linkedin, Youtube, Globe, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <BalanceScale className="h-6 w-6 text-legal-gold mr-2" />
+              <Scale className="h-6 w-6 text-legal-gold mr-2" />
               <span className="font-semibold text-xl">Legal AI</span>
             </div>
             <p className="mb-4 text-sm">
