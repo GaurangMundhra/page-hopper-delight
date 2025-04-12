@@ -11,6 +11,11 @@ interface NewsCardProps {
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({ title, content, image, link }) => {
+  // Determine if the image path is absolute (starts with http or /) or relative
+  const imageSrc = image.startsWith('http') || image.startsWith('/') 
+    ? image 
+    : `/src/assets/images/${image}`;
+    
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in opacity-0">
       <img
