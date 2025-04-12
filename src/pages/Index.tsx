@@ -22,19 +22,19 @@ const Index = () => {
     { 
       title: "New Data Privacy Law Enforced", 
       content: "A new data privacy law has been enacted to protect consumer information. Companies must comply with stricter data regulations.",
-      image: "/lovable-uploads/e855fe90-0871-4945-971c-7d0acd4ab196.png",
+      image: "/privacy_law.avif",
       link: "/news/data-privacy-law"
     },
     { 
       title: "Employment Laws Revised", 
       content: "The government has introduced amendments to employment laws, ensuring better worker protection and benefits.",
-      image: "/lovable-uploads/9f2fb21d-09ce-4316-9357-03a99886178b.png",
+      image: "/employmnet_law.avif",
       link: "/news/employment-laws"
     },
     { 
       title: "Taxation Law Updates", 
       content: "A new tax reform bill has been passed, impacting both individual and corporate tax rates. Experts suggest businesses adapt accordingly.",
-      image: "/lovable-uploads/e855fe90-0871-4945-971c-7d0acd4ab196.png",
+      image: "/taxation_law.avif",
       link: "/news/taxation-law"
     }
   ];
@@ -49,12 +49,12 @@ const Index = () => {
         </section>
 
         {/* Contact Info Section */}
-        <section className="container mx-auto px-4 py-8">
+        <section className="container mx-auto px-4 py-4">
           <ContactInfo />
         </section>
 
         {/* Legal Categories Section */}
-        <section className="container mx-auto px-4 py-12">
+        <section className="container mx-auto px-4 py-4">
           <h2 className="text-3xl font-bold text-center mb-8">Legal Categories</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {legalCategories.map((category, index) => (
@@ -66,7 +66,7 @@ const Index = () => {
         <Separator className="my-8" />
 
         {/* Latest News Section */}
-        <section className="container mx-auto px-4 py-12 bg-legal-light">
+        <section className="container mx-auto px-4 py-4 ">
           <h2 className="text-3xl font-bold text-center mb-8">Latest Legal News</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {latestNews.map((news, index) => (

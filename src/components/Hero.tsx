@@ -12,7 +12,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ 
   title = "Legal AI Assistance", 
   subtitle = "Our AI analyzes legal cases with precision.",
-  backgroundImage = "/lovable-uploads/e761dd52-08ae-454d-a3f4-d747ed3713c0.png" 
+  backgroundImage = "/image.png" 
 }) => {
   const [query, setQuery] = useState('');
 

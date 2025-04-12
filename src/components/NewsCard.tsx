@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from './ui/card';
@@ -14,9 +13,12 @@ interface NewsCardProps {
 const NewsCard: React.FC<NewsCardProps> = ({ title, content, image, link }) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow animate-fade-in opacity-0">
-      <div className="h-48 overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
-      </div>
+      <img
+  src={image}
+  alt={title}
+  className="w-full h-48 object-cover"
+/>
+
       <CardHeader className="p-4">
         <CardTitle className="text-lg font-bold">{title}</CardTitle>
       </CardHeader>
