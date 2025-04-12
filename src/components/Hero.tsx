@@ -16,6 +16,11 @@ const Hero: React.FC<HeroProps> = ({
 }) => {
   const [query, setQuery] = useState('');
 
+  // Determine if the backgroundImage path is absolute (starts with http or /) or relative
+  const bgImageSrc = backgroundImage.startsWith('http') || backgroundImage.startsWith('/') 
+    ? backgroundImage 
+    : `/src/assets/images/${backgroundImage}`;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Query submitted:', query);
@@ -23,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({
   };
 
   return (
-    <div className="relative w-full bg-center bg-cover h-[500px]" style={{ backgroundImage: `url(${backgroundImage})` }}>
+    <div className="relative w-full bg-center bg-cover h-[500px]" style={{ backgroundImage: `url(${bgImageSrc})` }}>
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white p-4">
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">{title}</h1>
